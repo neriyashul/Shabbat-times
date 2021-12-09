@@ -1,0 +1,9 @@
+- go to website: http://www.chabad.org.il/Time/Schedule.asp
+- run in console:
+	w = document.getElementsByName("Weeks")
+	var option = document.createElement("option");
+	option.text = "5217";
+	w[0].add(option);
+- set city to 'תל אביב', according to 'שעון חורף' and 5127 weeks (10 years).
+- copy times to file chabad-shabbat-times.csv
+- run python format_chabad_times.py - to format files
