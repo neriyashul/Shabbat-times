@@ -81,4 +81,6 @@ def main():
     shabbat_times = find_closest_shabbat(times)
     show_in_gui(shabbat_times)
 
-main()
+
+if __name__ == "__main__":
+    main()
