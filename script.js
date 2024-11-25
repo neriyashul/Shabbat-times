@@ -1,15 +1,13 @@
-var currentTimeIdx;
-var allTimes;
-
-async function loadData() {
-  const response = await fetch('shabbats_times.json');
-  allTimes = await response.json();
-  console.log("file loaded");
-
+function init() {
+  // allTimes is defined in shabbat_time.js;
   currentTimeIdx = findTodayTimeIdx();
   updateCard();
 }
-loadData();
+let currentTimeIdx;
+init();
+
+
+
 
 function findTodayTimeIdx() {
   const today = new Date();
@@ -30,7 +28,6 @@ function addMinutesToTime(timeStr, minutes) {
   return `${date.getHours()}:${date.getMinutes()}`
 }
 
-// Update card content
 function updateCard() {
   shabbatTimes = allTimes[currentTimeIdx]
 
@@ -107,13 +104,11 @@ document.getElementById("copy-btn").addEventListener("click", () => {
     $defaultMessage.classList.remove('hidden');
     $successMessage.classList.add('hidden');
   }
-  console.log(text)
-
   console.log("copy");
+  console.log(text);
 
   navigator.clipboard.writeText(text);
   showSuccess()
-  // alert("Copied the text: " + text);
 
   setInterval(
     function () { resetToDefault() },
@@ -124,6 +119,7 @@ document.getElementById("copy-btn").addEventListener("click", () => {
 // Share functionality
 document.getElementById("share-btn").addEventListener("click", () => {
   const text = formatText();
+  console.log("share")
   console.log(text)
   if (navigator.share && isModile()) {
     console.log('in navigator')

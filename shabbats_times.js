@@ -1,4 +1,4 @@
-[
+var allTimes = [
   {
     "startTime-TLV": "16:15",
     "endTime-TLV": "17:16",
