@@ -8,7 +8,6 @@ async function loadData() {
 
   currentTimeIdx = findTodayTimeIdx();
   updateCard();
-
 }
 loadData();
 
@@ -75,15 +74,6 @@ document.getElementById("next-btn").addEventListener("click", () => {
   currentTimeIdx = (currentTimeIdx + 1) % allTimes.length;
   updateCard();
 });
-
-
-`תולדות - כ"ט מרחשוון תשפ"ה (30.11.24)
-
-כניסת שבת ירושלים: 15:59
-כניסת שבת תל אביב: 16:14
-מנחה וקבלת שבת: 16:24
-מנחה: 15:59
-ערבית מוצ"ש: 17:15`
 
 function formatText() {
   const shabbatTimes = allTimes[currentTimeIdx]
