@@ -91,7 +91,7 @@ function formatText() {
   details = [
     `${shabbatTimes["name"]} - ${shabbatDate}`,
     "",
-      `כניסת שבת ירושלים: ${shabbatTimes["startTime-JRS"]}`,
+    `כניסת שבת ירושלים: ${shabbatTimes["startTime-JRS"]}`,
     `כניסת שבת תל אביב: ${shabbatTimes["startTime-TLV"]}`,
     `מנחה וקבלת שבת: ${addMinutesToTime(shabbatTimes["startTime-TLV"], 10)}`,
     `מנחה: ${shabbatTimes["startTime-JRS"]}`,
@@ -121,7 +121,7 @@ document.getElementById("copy-btn").addEventListener("click", () => {
 
   console.log("copy");
 
-  navigator.clipboard.write(text);
+  navigator.clipboard.writeText(text);
   showSuccess()
   // alert("Copied the text: " + text);
 
